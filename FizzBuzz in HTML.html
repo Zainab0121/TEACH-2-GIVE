@@ -1,0 +1,26 @@
+<!-- Write a program that prints the numbers from 1 to 100. For multiples of 3, print "Fizz"; for 
+multiples of 5, print "Buzz"; and for numbers that are multiples of both 3 and 5, print 
+"FizzBuzz".-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz in HTML</title>
+</head>
+<body>
+    <script>
+        for (let i = 1; i <= 100; i++) {
+            if (i % 3 === 0 && i % 5 === 0) {
+                document.write("FizzBuzz ");
+            } else if (i % 3 === 0) {
+                document.write("Fizz ");
+            } else if (i % 5 === 0) {
+                document.write("Buzz ");
+            } else {
+                document.write(i + " ");
+            }
+        }
+    </script>
+</body>
+</html>

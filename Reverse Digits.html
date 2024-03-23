@@ -1,0 +1,36 @@
+<!--Write a program that takes an integer as input and returns an integer with reversed digit 
+ordering. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reverse Digits</title>
+</head>
+<body>
+    <form onsubmit="return reverseDigits(event);">
+        <label for="inputNumber">Enter an integer:</label>
+        <input type="text" id="inputNumber" name="inputNumber" required><br>
+        <input type="submit" value="Submit">
+    </form>
+    <div id="result" style="display: none;"></div>
+    <script>
+        function reverseDigits(event) {
+            event.preventDefault();
+            var inputNumber = document.getElementById("inputNumber").value;
+            if (inputNumber.match(/[^-0-9]/)) {
+                document.getElementById("result").innerHTML = "Invalid input. Please enter an integer.";
+            } else {
+                var rev_num = 0;
+                inputNumber = Math.abs(inputNumber);
+                while (inputNumber > 0) {
+                    digit = inputNumber % 10;
+                    rev_num = rev_num * 10 + digit;
+                    inputNumber = Math.floor(inputNumber / 10);
+                }
+                document.getElementById("result").innerHTML = "Reversed number: " + rev_num;
+            }
+            document.getElementById("result").style.display = "block";
+        }
+    </script>
+</body>
+</html>

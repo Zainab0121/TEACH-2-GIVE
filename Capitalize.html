@@ -1,0 +1,54 @@
+<!-- Write a program that accepts a string as input, capitalizes the first letter of each word in the 
+string, and then returns the result string.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capitalize Words</title>
+</head>
+<body>
+
+<h2>Capitalize Words</h2>
+
+<form id="inputForm">
+  <label for="textInput">Enter a string:</label>
+  <input type="text" id="textInput" name="textInput" required>
+  <button type="submit">Capitalize</button>
+</form>
+
+<p id="result"></p>
+
+<script>
+document.getElementById("inputForm").addEventListener("submit", function(event) {
+  event.preventDefault(); 
+
+ 
+  let inputString = document.getElementById("textInput").value;
+
+ 
+  let resultString = capitalizeWords(inputString);
+
+  
+  document.getElementById("result").textContent = resultString;
+});
+
+function capitalizeWords(inputString) {
+ 
+  let words = inputString.split(" ");
+
+ 
+  for (let i = 0; i < words.length; i++) {
+    words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+  }
+
+ 
+  let resultString = words.join(" ");
+
+  return resultString;
+}
+</script>
+
+</body>
+</html>

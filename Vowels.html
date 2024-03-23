@@ -1,0 +1,33 @@
+<!-- Write a program that counts the number of vowels in a sentence -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Count Vowels</title>
+</head>
+<body>
+    <h1>Count Vowels in a Sentence</h1>
+    <p>Enter a sentence:</p>
+    <form onsubmit="return countVowels(event);">
+        <textarea id="inputSentence" name="inputSentence" rows="4" cols="50" required></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+    <div id="result" style="display: none;"></div>
+    <script>
+        function countVowels(event) {
+            event.preventDefault();
+            var inputSentence = document.getElementById("inputSentence").value;
+            var sentence = inputSentence.toLowerCase();
+            var vowels = "aeiou";
+            var count = 0;
+            for (var i = 0; i < sentence.length; i++) {
+                if (vowels.includes(sentence[i])) {
+                    count++;
+                }
+            }
+            document.getElementById("result").innerHTML = "Number of vowels in the sentence: " + count;
+            document.getElementById("result").style.display = "block";
+        }
+    </script>
+</body>
+</html>
